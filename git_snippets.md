@@ -13,7 +13,9 @@ git log --date-order --author=Taka --since=2020/1/1 --pretty=format:%cd --date=f
 
 ## Replacement
 `git grep` then replace words with `sed`.
+
 http://vdeep.net/git-grep-sed-replace
+
 ```bash
 git grep -l 'Foo' | xargs sed -i '' -e 's/Foo/Bar/g'
 ```
