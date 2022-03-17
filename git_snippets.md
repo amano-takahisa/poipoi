@@ -19,3 +19,18 @@ http://vdeep.net/git-grep-sed-replace
 ```bash
 git grep -l 'Foo' | xargs sed -i '' -e 's/Foo/Bar/g'
 ```
+
+## Branches
+Work in multiple branches simultaneously.
+```bash
+$ git checkout dev_branch1
+# ... work on dev_branch1 ...
+# ... e.g. running heavy process
+
+$ git worktree add dev_branch2
+# branch2 is checked out under dev_branch2 directory
+# ... work on dev_branch2 ...
+
+# after work under dev_branch2 is finished, remove the worktree with
+$ git worktree remove dev_branch2
+```
