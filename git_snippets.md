@@ -34,3 +34,11 @@ $ git worktree add dev_branch2
 # after work under dev_branch2 is finished, remove the worktree with
 $ git worktree remove dev_branch2
 ```
+
+## Blaming
+Find the author who invented the ugly variable.
+https://stackoverflow.com/a/5816177/
+
+```bash
+git log -S insanely_long_weird_inappropriate_variable_name --source --all
+```
