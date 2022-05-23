@@ -169,3 +169,10 @@ By setting `"properties"`, the properties of each feature will be displayed on m
                                     [12.13671, 44.741607],
                                     [12.13621, 44.742436]]]}}]}
 ```
+`geojson` string is easy to generate from a shapefile with `geopandas`.
+
+```python
+import geopandas as gpd
+
+geojson_str = gpd.GeoDataFrame.from_file('data/fields.shp').to_crs('epsg:4326').to_json()
+```
