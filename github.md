@@ -1,4 +1,94 @@
 # geojson test
+https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-geojson-and-topojson-maps
+
+The example `geojson` snippet in the official docs not works well.
+
+````
+```geojson
+{
+  "type": "Polygon",
+  "coordinates": [
+      [
+          [-90,30],
+          [-90,35],
+          [-90,35],
+          [-85,35],
+          [-85,30]
+      ]
+  ]
+}
+```
+````
+
+```geojson
+{
+  "type": "Polygon",
+  "coordinates": [
+      [
+          [-90,30],
+          [-90,35],
+          [-90,35],
+          [-85,35],
+          [-85,30]
+      ]
+  ]
+}
+```
+
+Instead of this, the following snippet works.
+
+````
+```geojson
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-90, 30],
+                        [-90, 35],
+                        [-90, 35],
+                        [-85, 35],
+                        [-85, 30]
+                    ]
+                ]
+            }
+        }
+    ]
+}
+```
+````
+
+```geojson
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-90, 30],
+                        [-90, 35],
+                        [-90, 35],
+                        [-85, 35],
+                        [-85, 30]
+                    ]
+                ]
+            }
+        }
+    ]
+}
+
+```
+
+By setting `"properties"`, the properties of each feature will be displayed on mouse click.
 
 ````
 ```geojson
